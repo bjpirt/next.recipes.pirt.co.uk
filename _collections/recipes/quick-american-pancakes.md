@@ -18,7 +18,7 @@ layout: recipe
 title: Quick American Pancakes
 category: breakfast
 images:
-  - img/main.jpg
+  - img/quick-american-pancakes.jpg
 source: "[BBC Food](http://www.bbc.co.uk/food/recipes/fluffyamericanpancak_74828)"
 tags: null
 ---

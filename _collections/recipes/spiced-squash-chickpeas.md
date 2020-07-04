@@ -7,6 +7,8 @@ tags:
  - vegetarian
 cuisine: mediterranean
 category: salad
+images:
+  - img/spiced-squash-chickpeas.jpg
 ingredients:
  - 1 decent sized squash peeled and chopped into chunks (I used butternut squash but others will work)
  - 8 shallots peeled and halved
