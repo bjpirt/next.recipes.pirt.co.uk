@@ -3,9 +3,8 @@ layout: recipe
 title: Vegetable and Chorizo Puff Pizza
 source: Invented
 tags:
- - dinner
 category: main
-cuisine: none
+cuisine: general
 serves: 2-3
 ingredients:
  - 1/2 pack puff pastry

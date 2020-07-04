@@ -11,11 +11,29 @@ collections:
     label: recipes
     folder: _collections/recipes
     fields:
-      # - {label: "Test", name: "test", widget: "relation", collection: "recipes", valueField: "title", searchFields: ["title"], multiple: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Source", name: "source", widget: "string"}
-      - {label: "Tags", collapsed: false, name: "tags", widget: "list", field: {label: "Value", name: "value", widget: "string"}}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Cuisine", name: "cuisine", widget: "string"}
+      - {label: "Tags", collapsed: false, name: "tags", widget: "relation", collection: "tags", valueField: "name", searchFields: ["name"], multiple: true}
+      - {label: "Category", name: "category", widget: "relation", collection: "categories", valueField: "name", searchFields: ["name"], multiple: false}
+      - {label: "Cuisine", name: "cuisine", widget: "relation", collection: "cuisines", valueField: "name", searchFields: ["name"], multiple: false}
+      - {label: "Serves", name: "serves", widget: "string"}
       - {label: "Ingredients", collapsed: false, name: "ingredients", widget: "list", field: {label: "Ingredient", name: "ingredient", widget: "string"}}
       - {label: "Method", collapsed: false, name: "method", widget: "list", field: {label: "Step", name: "step", widget: "string"}}
+  - name: categories
+    create: true
+    label: categories
+    folder: _collections/categories
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+  - name: cuisines
+    create: true
+    label: cuisines
+    folder: _collections/cuisines
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+  - name: tags
+    create: true
+    label: tags
+    folder: _collections/tags
+    fields:
+      - {label: "Name", name: "name", widget: "string"}

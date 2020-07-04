@@ -3,7 +3,6 @@ layout: recipe
 title: Quick American Pancakes
 source: "[BBC Food](http://www.bbc.co.uk/food/recipes/fluffyamericanpancak_74828)"
 tags:
- - breakfast
 cuisine: american
 category: breakfast
 ingredients:
