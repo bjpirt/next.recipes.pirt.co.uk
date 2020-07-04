@@ -12,6 +12,7 @@ collections:
     folder: _collections/recipes
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Source", name: "source", widget: "string"}
       - {label: "Tags", collapsed: false, name: "tags", widget: "relation", collection: "tags", valueField: "name", searchFields: ["name"], multiple: true}
       - {label: "Category", name: "category", widget: "relation", collection: "categories", valueField: "name", searchFields: ["name"], multiple: false}
