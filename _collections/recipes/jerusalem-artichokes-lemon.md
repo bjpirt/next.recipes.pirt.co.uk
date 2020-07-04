@@ -3,7 +3,6 @@ layout: recipe
 title: Jerusalem Artichokes with Potato and Lemon
 source: Ottolenghi
 tags:
- - artichoke
 category: side
 cuisine: north african
 ingredients:

@@ -12,14 +12,14 @@ collections:
     folder: _collections/recipes
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
-      - {label: "Source", name: "source", widget: "string"}
-      - {label: "Tags", collapsed: false, name: "tags", widget: "relation", collection: "tags", valueField: "name", searchFields: ["name"], multiple: true}
       - {label: "Category", name: "category", widget: "relation", collection: "categories", valueField: "name", searchFields: ["name"], multiple: false}
-      - {label: "Cuisine", name: "cuisine", widget: "relation", collection: "cuisines", valueField: "name", searchFields: ["name"], multiple: false}
-      - {label: "Serves", name: "serves", widget: "string"}
+      - {label: "Images", name: "images", required: false, widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Source", name: "source", required: false, widget: "markdown"}
+      - {label: "Tags", collapsed: false, name: "tags", required: false, widget: "relation", collection: "tags", valueField: "name", searchFields: ["name"], multiple: true}
+      - {label: "Cuisine", name: "cuisine", required: false, widget: "relation", collection: "cuisines", valueField: "name", searchFields: ["name"], multiple: false}
+      - {label: "Serves", name: "serves", required: false, widget: "string"}
       - {label: "Ingredients", collapsed: false, name: "ingredients", widget: "list", field: {label: "Ingredient", name: "ingredient", widget: "string"}}
-      - {label: "Method", collapsed: false, name: "method", widget: "list", field: {label: "Step", name: "step", widget: "string"}}
+      - {label: "Method", collapsed: false, name: "method", widget: "list", field: {label: "Step", name: "step", widget: "markdown"}}
   - name: categories
     create: true
     label: categories
