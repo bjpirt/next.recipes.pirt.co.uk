@@ -9,12 +9,13 @@ collections:
   - name: recipes
     create: true
     label: recipes
-    folder: recipes
+    folder: _collections/recipes
     fields:
+      # - {label: "Test", name: "test", widget: "relation", collection: "recipes", valueField: "title", searchFields: ["title"], multiple: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Source", name: "source", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tags", collapsed: false, name: "tags", widget: "list", field: {label: "Value", name: "value", widget: "string"}}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Cuisine", name: "cuisine", widget: "string"}
-      - {label: "Ingredients", name: "ingredients", widget: "list"}
-      - {label: "Method", name: "method", widget: "list"}
+      - {label: "Ingredients", collapsed: false, name: "ingredients", widget: "list", field: {label: "Ingredient", name: "ingredient", widget: "string"}}
+      - {label: "Method", collapsed: false, name: "method", widget: "list", field: {label: "Step", name: "step", widget: "string"}}
