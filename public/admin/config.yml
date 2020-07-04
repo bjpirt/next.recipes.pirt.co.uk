@@ -4,8 +4,10 @@ backend:
   repo: bjpirt/next.recipes.pirt.co.uk
 media_folder: public/img
 public_folder: img
+site_url: https://epic-goldwasser-a458e9.netlify.app
 collections:
   - name: recipes
+    create: true
     label: recipes
     folder: recipes
     fields:
