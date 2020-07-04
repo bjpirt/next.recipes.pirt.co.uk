@@ -24,17 +24,20 @@ collections:
     create: true
     label: categories
     folder: _collections/categories
+    identifier_field: name
     fields:
       - {label: "Name", name: "name", widget: "string"}
   - name: cuisines
     create: true
     label: cuisines
     folder: _collections/cuisines
+    identifier_field: name
     fields:
       - {label: "Name", name: "name", widget: "string"}
   - name: tags
     create: true
     label: tags
     folder: _collections/tags
+    identifier_field: name
     fields:
       - {label: "Name", name: "name", widget: "string"}
