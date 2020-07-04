@@ -5,19 +5,14 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+  - name: recipes
+    label: recipes
+    folder: recipes
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Source", name: "source", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Cuisine", name: "cuisine", widget: "string"}
+      - {label: "Ingredients", name: "ingredients", widget: "list"}
+      - {label: "Method", name: "method", widget: "list"}
