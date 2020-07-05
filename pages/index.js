@@ -1,10 +1,8 @@
-import Head from "next/head"
-import { Component } from 'react'
-// import { attributes, react as HomeContent } from '../recipes/home.md';
+import Head from "next/head";
+import Link from "next/link";
+import matter from 'gray-matter'
 
-export default class Home extends Component {
-  render() {
-    // let { title, cats } = attributes;
+const Index = props => {
     return (
       <>
         <Head>
@@ -13,16 +11,48 @@ export default class Home extends Component {
         <article>
           <h1>Recipes</h1>
           {/* <HomeContent /> */}
-          {/* <ul>
-            {cats.map((cat, k) => (
+          <ul>
+            {props.recipes.map((recipe, k) => (
               <li key={k}>
-                <h2>{cat.name}</h2>
-                <p>{cat.description}</p>
+                <h2><Link href={`/recipes/${recipe.slug}`}><a>{recipe.frontmatter.title}</a></Link></h2>
               </li>
             ))}
-          </ul> */}
+          </ul>
         </article>
       </>
     )
+}
+
+export default Index
+
+export async function getStaticProps() {
+  const recipes = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
+
+    const data = keys.map((key, index) => {
+      // Create slug from filename
+      const slug = key
+        .replace(/^.*[\\\/]/, '')
+        .split('.')
+        .slice(0, -1)
+        .join('.')
+      const value = values[index]
+      // Parse yaml metadata & markdownbody in document
+      const document = matter(value.default)
+      return {
+        frontmatter: document.data,
+        markdownBody: document.content,
+        slug,
+      }
+    })
+    return data
+  })(require.context('../_collections/recipes', true, /\.md$/))
+
+  return {
+    props: {
+      recipes
+    },
   }
+
 }
